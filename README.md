@@ -24,19 +24,21 @@ Link CSS and Javascript
 
 {{ 'flexslideshow.js' | asset_url | script_tag }}
 
-<script type="text/javascript">
-  $(function(){
-    SyntaxHighlighter.all();
-  });
-  $(window).load(function(){
-    $('.flexslider').flexslider({
-      animation: "slide",
-      start: function(slider){
-        $('body').removeClass('loading');
-      }
-    });
-  });
-</script>
+
+
+-- Copy this code below and put this in the footer between <script></script> tags.
+
+$(function(){
+SyntaxHighlighter.all();
+});
+$(window).load(function(){
+$('.flexslider').flexslider({
+animation: "slide",
+start: function(slider){
+$('body').removeClass('loading');
+}
+});
+});
 
 
 Add Slideshow-Settings.html
