@@ -10,6 +10,35 @@ Add CSS and Javascript
 Upload the flexslideshow.js, shop.js, and slideshow.css files to the assets folder.
 
 
+Link CSS and Javascript
+================
+
+-- Copy the code and past the code between the <head></head> tags.
+
+{{ 'slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'shop.js' | asset_url | script_tag }}
+
+
+
+-- Copy the code in the footer right before the </body> tag.
+
+{{ 'flexslideshow.js' | asset_url | script_tag }}
+
+<script type="text/javascript">
+  $(function(){
+    SyntaxHighlighter.all();
+  });
+  $(window).load(function(){
+    $('.flexslider').flexslider({
+      animation: "slide",
+      start: function(slider){
+        $('body').removeClass('loading');
+      }
+    });
+  });
+</script>
+
+
 Add Slideshow-Settings.html
 ================
 
